@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/CSS/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <div id="slider">
+            <ul id="listaDeMeses">
+                <li class="liMeses">Janeiro</li>
+                <li class="liMeses">Fevereiro</li>
+                <li class="liMeses">Março</li>
+                <li class="liMeses">Abril</li>
+                <li class="liMeses">Maio</li>
+                <li class="liMeses">Junho</li>
+                <li class="liMeses">Julho</li>
+                <li class="liMeses">Agosto</li>
+                <li class="liMeses">Setembro</li>
+                <li class="liMeses">Outubro</li>
+                <li class="liMeses">Novembro</li>
+                <li class="liMeses">Dezembro</li>
+            </ul>
+        </div>
+        <span><img id="seta" src="/images/seta.png"></span>
+        <span id="data"></span>
+    </header>
+
+    <main id="main">
+        <div id="startSquare" class="main_squares stt">
+            <div id="positivos">
+                <form class="formulario">
+                    <input class="for_inputs inpValor" id="valorPositivos" type="number" placeholder="Valor">
+                    <input class="for_inputs inpDescricao" id="descricaoPositivos" type="text" placeholder="Descrição" maxlength="60">
+                    <input class="for_inputs inpDia" id="diaPositivos" type="number" placeholder="Dia">
+                    <input id="positivosBTN" class="for_button" type="button" value="Valor">
+                </form>
+
+                <div style="text-align: center;">Seu total de ganhos:</div>
+                <div id="totalPositivo">0</div>
+            </div>
+
+            <div id="negativos">
+                <form class="formulario">
+                    <input class="for_inputs inpValor" id="valorNegativos" type="number" placeholder="Valor">
+                    <input class="for_inputs inpDescricao" id="descricaoNegativos" type="text" placeholder="Descrição" maxlength="60">
+                    <input class="for_inputs inpDia" id="diaNegativos" type="number" placeholder="Dia">
+                    <input id="negativosBTN" class="for_button" type="button" value="Valor">
+                </form>
+
+                <div style="text-align: center;">Seu total de gastos:</div>
+                <div id="totalNegativo">0</div>
+            </div>
+        </div>
+        <div id="midSquare" class="main_squares mid">
+            <span id="mesSelecionado"></span>
+            <div id="ulPai"></div>
+        </div>
+
+        <div id="endSquare" class="main_squares end">
+            <div id="saldo">R$ 0</div>
+            <span style="text-align: center; border-top: solid 1px black;">Seu saldo:</span>
+        </div>
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/JS/script.js"></script>
+</body>
+
+</html>

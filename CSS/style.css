@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+input {
+    border: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+button {
+    border: none;
+}
+
+li {
+    list-style: none;
+    border-bottom: solid 1px black;
+    padding-left: 6px;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#header {
+    position: sticky;
+    width: 100%;
+    height: 50px;
+    background-color: #FFE600;
+    box-shadow: 0 0 3px black;
+}
+
+#data {
+    position: absolute;
+    margin-left: 50px;
+    margin-right: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 32px;
+}
+
+#seta {
+    transition: 500ms;
+    width: 50px;
+    height: 50px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+#slider {
+    display: none;
+    top: 51.6px;
+    position: fixed;
+    background-color: white;
+    width: 18%;
+    height: 100vh;
+    box-shadow: 0 2px 4px black;
+}
+
+#listaDeMes {
+    background-color: white;
+}
+
+.liMeses {
+    text-align: center;
+    border-bottom: solid 1px black;
+}
+
+.liMeses:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    width: 60%;
+    box-shadow: 0 0 4px black;
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+.main_squares {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border: solid 1px;
+}
+
+.stt {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.mid {
+    border-left: none;
+    border-right: none;
+}
+
+.novoLi:hover{
+  background-color: #FFE600;
+  color: rgb(149, 0, 0);
+ text-decoration: line-through;
+}
+
+.end {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#positivos {
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 1px black;
+    border-top-left-radius: 9px;
+}
+
+#negativos {
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 9px;
+}
+
+#mesSelecionado {
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    line-height: 27px;
+    height: 30px;
+    border-bottom: solid 1px black;
+    width: 100%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5.5%;
+    width: 90%;
+}
+
+.for_inputs {
+    text-align: center;
+    height: 30px;
+    border: solid 1px black;
+}
+
+.inpDescricao {
+    border-top: none;
+    border-bottom: none;
+}
+
+.inpDia {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.inpValor {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.for_button {
+    display: inline-block;
+    background-color: #FFE600;
+    height: 40px;
+    border: solid 1px black;
+    border-top: none;
+}
+
+#totalPositivo {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 35px;
+}
+
+#totalNegativo {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 35px;
+}
+
+#endSquare {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#saldo {
+    border-bottom-right-radius: 9px;
+    margin-top: 3px;
+    border-top: solid 1px black;
+    text-align: center;
+    font-size: 60px;
+    width: 100%;
+    height: 100px;
+    transition: 1.5s;
+}
