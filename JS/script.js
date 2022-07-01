@@ -24,6 +24,15 @@ let totalNegativo = document.getElementById("totalNegativo")
 let saldo = document.getElementById("saldo");
 
 let ulPai = document.getElementById("ulPai");
+
+let excluirDadosMes = document.getElementById("excluirDadosMes");
+let excluirTodosDados = document.getElementById("excluirTodosDados");
+
+let telaDeConfirmacao = document.getElementsByClassName("telaDeConfirmacao")[0];
+let texto_telaDeConfirmacao = document.getElementById("texto_telaDeConfirmacao");
+
+let BTNConfirmacaoNao = document.getElementById("BTNConfirmacaoNao");
+let BTNConfirmacaoSim = document.getElementById("BTNConfirmacaoSim");
 // ===========================
 
 // TODAS AS VARIÁVEIS GLOBAIS
@@ -32,8 +41,9 @@ let valorTotalNegativos = 0;
 let DIA = new Date().getDate();
 let MES = new Date().getMonth();
 let ANO = new Date().getFullYear();
-
-const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+let meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+let excDadosMes_bool = false;
+let excTodosDados_bool = false;
 
 // ==========================
 
@@ -49,12 +59,48 @@ positivosBTN.addEventListener("click", criarListaPositivos);
 negativosBTN.addEventListener("click", criarListaNegativos);
 ulPai.addEventListener("click", excluirLi);
 
+excluirDadosMes.addEventListener("click", ()=>{
+    texto_telaDeConfirmacao.innerText = "Você realmente deseja excluir todos os dados desse mês?"
+telaDeConfirmacao.style.display = "flex";
+excDadosMes_bool = true;
+})
+
+excluirTodosDados.addEventListener("click", ()=>{
+    texto_telaDeConfirmacao.innerText = "Você realmente deseja excluir todos os dados?"
+    telaDeConfirmacao.style.display = "flex";
+    excTodosDados_bool = true;
+})
+
+BTNConfirmacaoNao.addEventListener("click", ()=>{
+    telaDeConfirmacao.style.display = "none";
+})
+BTNConfirmacaoSim.addEventListener("click", ()=>{
+   if(excDadosMes_bool){
+   localStorage.removeItem(`criarListaLS${mesSelecionado.innerText}`);
+   localStorage.removeItem(`totalNegativoLS${mesSelecionado.innerText}`);
+   localStorage.removeItem(`totalPositivoLS${mesSelecionado.innerText}`);
+   telaDeConfirmacao.style.display = "none";
+   excDadosMes_bool = false;
+   location.reload();
+   }
+
+   if(excTodosDados_bool){
+    localStorage.clear();
+    telaDeConfirmacao.style.display = "none";
+    excTodosDados_bool = false;
+   location.reload();
+   }
+})
+
 // ================
 
 data.innerHTML = "Dia " + DIA + " de " + meses[MES] + " de " + ANO;
 
-mesSelecionado.innerText = meses[MES];
-// mesSelecionado.innerText = localStorage.getItem("mesSelecionadoLS");
+if(!localStorage.getItem("mesSelecionadoLS") == ""){
+    mesSelecionado.innerText = localStorage.getItem("mesSelecionadoLS");
+}else{
+    mesSelecionado.innerText = meses[MES];
+}  // Se não tiver mes no LS, então o mês será o atual
 
 ulPai.innerHTML = localStorage.getItem(`criarListaLS${mesSelecionado.innerText}`);
 
@@ -171,7 +217,7 @@ function saldoTotal(){
    }
 
    if(saldo.innerText == `R$ ${0}`){
-    saldo.style.backgroundColor = "white"
+    saldo.style.backgroundColor = "#e4e4e4";
    saldo.style.color = "black";
    }
 }

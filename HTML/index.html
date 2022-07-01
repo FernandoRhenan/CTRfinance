@@ -17,6 +17,7 @@
     <header id="header">
         <div id="slider">
             <ul id="listaDeMeses">
+                <div style="text-align: center; border-bottom: solid 1px;">Selecione o mês:</div>
                 <li class="liMeses">Janeiro</li>
                 <li class="liMeses">Fevereiro</li>
                 <li class="liMeses">Março</li>
@@ -30,31 +31,44 @@
                 <li class="liMeses">Novembro</li>
                 <li class="liMeses">Dezembro</li>
             </ul>
+
+            
+            <div id="excluirDadosMes">Excluir dados do mês</div>
+            <div id="excluirTodosDados">Excluir todos os dados</div>
         </div>
         <span><img id="seta" src="/images/seta.png"></span>
         <span id="data"></span>
     </header>
 
+        <div id="telaDeConfirmacaoMes" class="telaDeConfirmacao"><p id="texto_telaDeConfirmacao">Você realmente deseja excluir todos os dados desse mês?</p>
+           <span class="confirmacaoPai">
+            <div class="BTNConfirmacao" id="BTNConfirmacaoSim">Sim</div>
+            <div class="BTNConfirmacao" id="BTNConfirmacaoNao">Não</div>
+        </span>
+        </div>
+
     <main id="main">
         <div id="startSquare" class="main_squares stt">
-            <div id="positivos">
+            <div id="positivos"><div style="text-align: center;">Insira seus ganhos</div>
                 <form class="formulario">
                     <input class="for_inputs inpValor" id="valorPositivos" type="number" placeholder="Valor">
-                    <input class="for_inputs inpDescricao" id="descricaoPositivos" type="text" placeholder="Descrição" maxlength="60">
+                    <input class="for_inputs inpDescricao" id="descricaoPositivos" type="text" placeholder="Descrição"
+                        maxlength="60">
                     <input class="for_inputs inpDia" id="diaPositivos" type="number" placeholder="Dia">
-                    <input id="positivosBTN" class="for_button" type="button" value="Valor">
+                    <input id="positivosBTN" class="for_button" type="button" value="Somar">
                 </form>
 
                 <div style="text-align: center;">Seu total de ganhos:</div>
                 <div id="totalPositivo">0</div>
             </div>
 
-            <div id="negativos">
+            <div id="negativos"><div style="text-align: center;">Insira seus gastos</div>
                 <form class="formulario">
                     <input class="for_inputs inpValor" id="valorNegativos" type="number" placeholder="Valor">
-                    <input class="for_inputs inpDescricao" id="descricaoNegativos" type="text" placeholder="Descrição" maxlength="60">
+                    <input class="for_inputs inpDescricao" id="descricaoNegativos" type="text" placeholder="Descrição"
+                        maxlength="60">
                     <input class="for_inputs inpDia" id="diaNegativos" type="number" placeholder="Dia">
-                    <input id="negativosBTN" class="for_button" type="button" value="Valor">
+                    <input id="negativosBTN" class="for_button" type="button" value="Somar">
                 </form>
 
                 <div style="text-align: center;">Seu total de gastos:</div>
@@ -68,7 +82,7 @@
 
         <div id="endSquare" class="main_squares end">
             <div id="saldo">R$ 0</div>
-            <span style="text-align: center; border-top: solid 1px black;">Seu saldo:</span>
+            <span class="textoSaldo">Seu saldo:</span>
         </div>
     </main>
 
